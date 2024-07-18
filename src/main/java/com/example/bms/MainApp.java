@@ -1,22 +1,18 @@
 package com.example.bms;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
-        StackPane root = new StackPane();
-        root.getChildren().add(new Label("Hello, JavaFX!"));
-
-        Scene scene = new Scene(root, 300, 200);
-
-        primaryStage.setTitle("BMS Demo");
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
+        primaryStage.setTitle("BMS Login");
         primaryStage.show();
     }
 
